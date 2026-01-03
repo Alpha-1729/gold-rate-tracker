@@ -1,0 +1,12 @@
+name: gold-rate-tracker
+
+services:
+  app:
+    build: .
+    image: gold-rate-tracker:latest
+    container_name: app
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Kolkata
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
